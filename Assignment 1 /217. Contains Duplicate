@@ -1,0 +1,22 @@
+💡 **Q6.** Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+**Example 1:**
+Input: nums = [1,2,3,1]
+
+Output: true
+Leetcode link: https://leetcode.com/problems/contains-duplicate/description/
+
+Solution:
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        unordered_set<int> check_double;
+        for( int num : nums)
+        {
+            if(check_double.count(num) > 0) return true;
+            check_double.insert(num);
+        }
+        return false;
+        
+    }
+};
