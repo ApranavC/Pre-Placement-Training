@@ -16,3 +16,16 @@ Explanation: The longest harmonious subsequence is [3,2,2,2,3].
 Leetcode link: https://leetcode.com/problems/longest-harmonious-subsequence/
 
 Solution:
+
+class Solution {
+public:
+    int findLHS(vector<int>& nums) {
+        map<int,int> freq;
+        for(auto a:nums) ++freq[a];
+        int ans=0;
+        for(auto a:freq)
+            if(freq.count(a.first+1))   
+            ans = max(ans, a.second+freq[a.first+1]);
+            return ans;
+    }
+};
