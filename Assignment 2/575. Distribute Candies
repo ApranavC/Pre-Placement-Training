@@ -13,3 +13,14 @@ Explanation: Alice can only eat 6 / 2 = 3 candies. Since there are only 3 types,
 Leetcode link: https://leetcode.com/problems/distribute-candies/description/
 
 Solution:
+class Solution {
+public:
+    int distributeCandies(vector<int>& candyType) {
+        int  n = candyType.size()/2;
+        unordered_set<int> hash(candyType.begin(), candyType.end());
+        if(hash.size() >= n) return n;
+        else return hash.size();
+        
+
+    }
+};
