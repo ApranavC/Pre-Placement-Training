@@ -12,3 +12,25 @@ Output: [1,5]
 Link :
 
 Solution: 
+
+void findCommon(int a[], int b[], int c[], int n1, int n2,
+                int n3)
+{
+
+    unordered_set<int> uset, uset2, uset3;
+    for (int i = 0; i < n1; i++) {
+        uset.insert(a[i]);
+    }
+    for (int i = 0; i < n2; i++) {
+        uset2.insert(b[i]);
+    }
+    
+    for (int i = 0; i < n3; i++) {
+        if (uset.find(c[i]) != uset.end()
+            && uset2.find(c[i]) != uset.end()) {
+            if (uset3.find(c[i]) == uset3.end())
+                cout << c[i] << " ";
+            uset3.insert(c[i]);
+        }
+    }
+}
