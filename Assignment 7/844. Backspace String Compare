@@ -1,0 +1,50 @@
+<aside>
+💡 **Question 7**
+
+Given two strings s and t, return true *if they are equal when both are typed into empty text editors*. '#' means a backspace character.
+
+Note that after backspacing an empty text, the text will continue empty.
+
+**Example 1:**
+
+**Input:** s = "ab#c", t = "ad#c"
+
+**Output:** true
+
+**Explanation:**
+
+Both s and t become "ac".
+
+</aside>
+Leetcode link: https://leetcode.com/problems/backspace-string-compare/
+
+Solution: 
+class Solution {
+public:
+    bool backspaceCompare(string s, string t) {
+        string new_s="",new_t="";
+        int count=0;
+        for(int i=s.length()-1;i>=0;i--){
+            if(s[i]=='#')
+                count++;
+            else{
+                if(count>0)
+                    count--;
+                else
+                    new_s+=s[i];
+            }
+        }
+        count=0;
+        for(int i=t.length()-1;i>=0;i--){
+            if(t[i]=='#')
+                count++;
+            else{
+                if(count>0)
+                    count--;
+                else
+                    new_t+=t[i];
+            }
+        }
+        return (new_s==new_t);
+    }
+};
