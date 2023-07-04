@@ -1,0 +1,136 @@
+Q 2 Create a form with basic validation (name, email, phone number, password, age, gender, date, color picker)
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form with Basic Validation</title>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form with Basic Validation</h2>
+  
+  <form id="myForm" onsubmit="validateForm(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <br>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    <br>
+    
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" pattern="[0-9]{10}" required>
+    <br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+    <br>
+    
+    <label for="age">Age:</label>
+    <input type="number" id="age" min="18" max="100" required>
+    <br>
+    
+    <label for="gender">Gender:</label>
+    <select id="gender" required>
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <br>
+    
+    <label for="date">Date:</label>
+    <input type="date" id="date" required>
+    <br>
+    
+    <label for="color">Favorite Color:</label>
+    <input type="color" id="color" required>
+    <br>
+    
+    <input type="submit" value="Submit">
+  </form>
+  
+  <script>
+    function validateForm(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var password = document.getElementById('password').value;
+      var age = document.getElementById('age').value;
+      var gender = document.getElementById('gender').value;
+      var date = document.getElementById('date').value;
+      var color = document.getElementById('color').value;
+      
+      var isValid = true; // Flag to track form validity
+      
+      // Basic validation for each field
+      if (name === '') {
+        isValid = false;
+        document.getElementById('name').classList.add('error');
+      } else {
+        document.getElementById('name').classList.remove('error');
+      }
+      
+      if (email === '') {
+        isValid = false;
+        document.getElementById('email').classList.add('error');
+      } else {
+        document.getElementById('email').classList.remove('error');
+      }
+      
+      if (phone === '') {
+        isValid = false;
+        document.getElementById('phone').classList.add('error');
+      } else {
+        document.getElementById('phone').classList.remove('error');
+      }
+      
+      if (password === '') {
+        isValid = false;
+        document.getElementById('password').classList.add('error');
+      } else {
+        document.getElementById('password').classList.remove('error');
+      }
+      
+      if (age === '' || age < 18 || age > 100) {
+        isValid = false;
+        document.getElementById('age').classList.add('error');
+      } else {
+        document.getElementById('age').classList.remove('error');
+      }
+      
+      if (gender === '') {
+        isValid = false;
+        document.getElementById('gender').classList.add('error');
+      } else {
+        document.getElementById('gender').classList.remove('error');
+      }
+      
+      if (date === '') {
+        isValid = false;
+        document.getElementById('date').classList.add('error');
+      } else {
+        document.getElementById('date').classList.remove('error');
+      }
+      
+      if (color === '') {
+        isValid = false;
+        document.getElementById('color').classList.add('error');
+      } else {
+        document.getElementById('color').classList.remove('error');
+      }
+      
+      // If form is valid, submit the form
+      if (isValid) {
+        document.getElementById('myForm').submit();
+      }
+    }
+  </script>
+</body>
+</html>
