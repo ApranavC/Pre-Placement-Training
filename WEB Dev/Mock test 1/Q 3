@@ -1,0 +1,56 @@
+ Explain what is execution context in detail with diagram
+
+In JavaScript, an execution context is an environment where JavaScript code is executed. It consists of variables, functions, objects, and the scope chain, which determines the accessibility of variables and functions during runtime. Each time a function is called, a new execution context is created. Understanding execution contexts is crucial for understanding how JavaScript code is executed.
+
+An execution context can be divided into three main components:
+
+1. Variable Object (VO)/Environment Record:
+   - Contains variables, function declarations, and function arguments.
+   - Stores the identifier (name) and the value of each variable and function.
+   - Created in two phases: declaration phase (creation of variables and functions) and initialization phase (assigning values and references).
+   - The VO/Environment Record for the global context represents the global scope.
+
+2. Scope Chain:
+   - Determines the accessibility of variables and functions.
+   - Created at the time of function creation and preserved in the function's closure.
+   - Consists of a series of variable objects, starting with the function's own Variable Object (VO) and traversing up the scope chain until reaching the global scope.
+
+3. "this" Value:
+   - Refers to the current execution context.
+   - Determines the value of "this" within a function.
+
+Now, let's visualize the execution context with a diagram:
+
+```
+Global Execution Context
+-----------------------
+|  Variable Object    |
+|  (Global Scope)    |
+|--------------------|
+|  Scope Chain       |
+|  (Global Scope)    |
+|--------------------|
+|  "this" Value      |
+|  (Global Object)   |
+-----------------------
+
+Function Execution Context
+------------------------
+|  Variable Object   |
+|  (Function Scope)  |
+|-------------------|
+|  Scope Chain       |
+|  (Function Scope)  |
+|-------------------|
+|  "this" Value     |
+|  (Object or Value) |
+-----------------------
+```
+
+In the diagram, we have two types of execution contexts: the Global Execution Context and the Function Execution Context. The Global Execution Context represents the global scope, and it is created when the JavaScript code starts executing. The Function Execution Context represents the scope of a specific function and is created whenever a function is called.
+
+Each execution context has its own Variable Object (VO) or Environment Record, which holds variables and functions specific to that context. The Scope Chain links the Variable Objects together, allowing access to variables and functions from outer scopes. Finally, the "this" value within an execution context refers to the object or value that is currently being executed.
+
+It's important to note that JavaScript follows a stack-like structure called the "Call Stack" to manage execution contexts. As functions are called, their respective execution contexts are pushed onto the stack, and when a function completes its execution, its execution context is popped off the stack.
+
+Understanding the concept of execution contexts helps to grasp the scoping rules and variable accessibility in JavaScript, enabling better debugging and writing efficient code.
