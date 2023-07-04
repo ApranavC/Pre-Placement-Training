@@ -20,12 +20,14 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 30vw;
     
 }
 .rightnav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 30vw;
 }
 
 main{
