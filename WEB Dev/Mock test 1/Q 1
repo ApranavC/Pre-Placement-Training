@@ -1,0 +1,95 @@
+Q 1. Explain all the CSS positions(static, fixed, sticky, relative, absolute) with one code example each
+
+
+1. Static:
+   - The default position value for elements.
+   - Positioned according to the normal flow of the document.
+   - Ignoring top, bottom, left, right, and z-index properties.
+   
+   ```html
+   <style>
+     .box {
+       position: static;
+       background-color: yellow;
+     }
+   </style>
+   
+   <div class="box">Static Position</div>
+   ```
+   
+2. Fixed:
+   - Positioned relative to the browser window.
+   - It remains fixed even when the page is scrolled.
+   
+   ```html
+   <style>
+     .box {
+       position: fixed;
+       top: 20px;
+       right: 20px;
+       background-color: cyan;
+     }
+   </style>
+   
+   <div class="box">Fixed Position</div>
+   ```
+   
+3. Sticky:
+   - Acts like `relative` position until the element reaches a specified threshold, then becomes `fixed` position.
+   - It remains fixed until it reaches the boundary defined by its parent or container.
+   
+   ```html
+   <style>
+     .box {
+       position: sticky;
+       top: 50px;
+       background-color: pink;
+     }
+   </style>
+   
+   <div class="box">Sticky Position</div>
+   ```
+   
+4. Relative:
+   - Positioned relative to its normal position.
+   - Can be moved using the top, right, bottom, and left properties.
+   
+   ```html
+   <style>
+     .box {
+       position: relative;
+       top: 30px;
+       left: 30px;
+       background-color: lightgreen;
+     }
+   </style>
+   
+   <div class="box">Relative Position</div>
+   ```
+   
+5. Absolute:
+   - Positioned relative to its closest positioned ancestor.
+   - If there is no positioned ancestor, it is positioned relative to the initial containing block.
+   
+   ```html
+   <style>
+     .container {
+       position: relative;
+       height: 200px;
+       width: 200px;
+       background-color: lightblue;
+     }
+     
+     .box {
+       position: absolute;
+       top: 50px;
+       left: 50px;
+       background-color: lightgray;
+     }
+   </style>
+   
+   <div class="container">
+     <div class="box">Absolute Position</div>
+   </div>
+   ```
+   
