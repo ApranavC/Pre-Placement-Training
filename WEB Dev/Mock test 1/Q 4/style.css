@@ -1,0 +1,54 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+header{
+    position: sticky;
+    color: azure;
+    background-color: black;
+    padding: 10px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px ;
+
+}
+.leftnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.rightnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.profileimg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 500px;
+    width: 500px;
+}
+aside{
+    margin: 20px;
+    padding: 20px;
+    margin-left: 200px;
+}
+footer{
+    color: azure;
+    background-color: black;
+    padding: 10px;
+}
