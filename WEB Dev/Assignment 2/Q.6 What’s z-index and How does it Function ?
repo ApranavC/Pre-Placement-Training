@@ -1,0 +1,19 @@
+Q.6 What’s z-index and How does it Function ?
+Solution:
+In CSS, the `z-index` property controls the stacking order of positioned elements. It determines the depth at which an element is displayed in the stacking context, specifically regarding elements that overlap in the z-axis (perpendicular to the screen).
+
+The `z-index` property accepts a numeric value or the keyword `auto`. A higher `z-index` value places an element on top of elements with lower values or no `z-index` specified.
+
+Here's how `z-index` functions:
+
+1. Stacking Context: The `z-index` property works within a stacking context. Each stacking context is a hierarchical order of elements and their children, starting from the root element. Stacking contexts can be formed through various means, such as positioned elements (with a `position` value other than `static`) and elements with a specified `z-index`.
+
+2. Stacking Order: By default, elements have a `z-index` value of `auto`, which means they follow the stacking order based on their position in the HTML document. Positioned elements (non-`static` position) with a `z-index` value other than `auto` create a new stacking context and are positioned above elements in lower stacking contexts.
+
+3. Numeric Values: Numeric values for `z-index` determine the stacking order within the same stacking context. Higher values place an element on top of elements with lower values or `auto`. Negative values are also valid and can position elements below others.
+
+4. Stacking Order Rules: When two elements have the same `z-index` or no `z-index` specified, the stacking order is determined by the element's position in the HTML document. Elements later in the document order appear on top of earlier elements.
+
+5. Stacking Context Hierarchy: If an element with a specified `z-index` is within a parent element with a different stacking context, the parent's stacking order takes precedence over the child element's `z-index`.
+
+The `z-index` property is useful for managing the layering and visibility of overlapping elements. It allows you to control which elements appear on top of others, especially when working with positioned elements or complex layouts. However, it's important to use `z-index` judiciously to avoid creating confusing or unintended stacking contexts that may affect the overall user experience.
