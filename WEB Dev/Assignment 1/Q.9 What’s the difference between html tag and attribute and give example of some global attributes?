@@ -1,0 +1,32 @@
+Q.9 What’s the difference between html tag and attribute and give example of some global attributes?
+Solution:
+In HTML, there is a distinction between tags and attributes:
+
+1. HTML Tag:
+HTML tags are used to define the structure and presentation of content within an HTML document. Tags are written between angle brackets (`<>`). For example, `<p>`, `<div>`, `<h1>`, and `<a>` are all examples of HTML tags. Each tag has a specific purpose and defines different elements on a webpage.
+
+2. HTML Attribute:
+HTML attributes provide additional information or modify the behavior of HTML elements. They are applied within the opening tag of an HTML element and consist of an attribute name and a corresponding value. Attributes are used to configure various aspects of an element's behavior, appearance, or functionality.
+
+Here's an example to illustrate the difference:
+
+```html
+<a href="https://www.example.com" target="_blank">Visit Example</a>
+```
+
+In the example above:
+- `<a>` is the HTML tag, representing a hyperlink.
+- `href` and `target` are attributes of the `<a>` tag.
+- `href="https://www.example.com"` specifies the URL that the hyperlink points to.
+- `target="_blank"` specifies that the hyperlink should open in a new browser tab or window.
+
+Global attributes are attributes that can be used with any HTML element. Some examples of global attributes are:
+
+- `class`: Specifies one or more CSS classes to be applied to an element.
+- `id`: Assigns a unique identifier to an element.
+- `style`: Defines inline CSS styles for an element.
+- `title`: Provides a title or tooltip text for an element.
+- `data-*`: Allows custom data attributes to be added to elements for storing extra information.
+- `aria-*`: Used for accessibility purposes to provide additional information to assistive technologies.
+
+These global attributes can be applied to various HTML elements to modify their behavior, appearance, or accessibility.
