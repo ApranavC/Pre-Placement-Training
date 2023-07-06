@@ -1,0 +1,82 @@
+Q.8 Difference between absolute and relative and sticky and fixed position explain with example.
+Solution:
+1. Absolute Positioning vs. Relative Positioning:
+- Absolute Positioning: When an element is set to `position: absolute;`, it is positioned relative to its closest positioned ancestor (an element with a position value other than `static`). If no positioned ancestor is found, the element will be positioned relative to the initial containing block (usually the `<body>` element). The element is then taken out of the normal document flow, and other elements will not adjust their positions based on it.
+
+Example:
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
+```css
+.parent {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.child {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+```
+In the example above, the `.child` element is absolutely positioned inside the `.parent` element. It is positioned 50 pixels from the top and left of its positioned ancestor (`.parent`), which is set to `position: relative;`. The `.child` element is taken out of the normal flow and does not affect the positioning of other elements.
+
+- Relative Positioning: When an element is set to `position: relative;`, it remains in the normal document flow. It can be positioned using the `top`, `right`, `bottom`, and `left` properties, but it retains its space in the document flow, meaning other elements will still respect its position.
+
+Example:
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
+```css
+.parent {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.child {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+```
+In this example, the `.child` element is relatively positioned inside the `.parent` element. It is moved 50 pixels from the top and left of its normal position while still occupying space in the document flow. Other elements will respect its position and adjust accordingly.
+
+2. Sticky Positioning vs. Fixed Positioning:
+- Sticky Positioning: When an element is set to `position: sticky;`, it behaves like `position: relative;` until it reaches a specific scroll position, where it becomes "sticky" and starts behaving like `position: fixed;`. In other words, it toggles between relative and fixed positioning based on the scroll position of the viewport.
+
+Example:
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
+```css
+.parent {
+  height: 2000px;
+  background-color: #f0f0f0;
+}
+
+.child {
+  position: sticky;
+  top: 50px;
+  height: 100px;
+  background-color: red;
+}
+```
+In this example, the `.child` element is set to `position: sticky;` with a `top` value of 50 pixels. When scrolling, the `.child` element remains in its normal position until it reaches the top of the viewport. At that point, it becomes "sticky" and stays fixed 50 pixels from the top of the viewport as the rest of the content scrolls.
+
+- Fixed Positioning: When an element is set to `position: fixed;`, it is positioned relative to the viewport, meaning it remains fixed even when the page
