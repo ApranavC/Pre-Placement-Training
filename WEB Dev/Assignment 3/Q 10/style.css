@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: aliceblue;
+    margin: 10vh;
+}
+table{
+    margin-top: 10vh;
+    height: 90%;
+    width: 80%;
+    overflow: scroll;
+}
+th{
+    text-align: left;
+    padding: 5px;
+}
+tr{
+    border-bottom: 1pt solid white;
+}
+td{
+    border: 1px solid black;
+    padding: 5px;
+    margin-right : 10vw;
+    
+}
