@@ -1,0 +1,208 @@
+
+@media (min-width: 0px){
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 10vh;
+        color: aliceblue;
+        background-color: black;
+    }
+    .logo{
+        margin-left: 20px;
+    }
+    
+    .navigate{
+        display: none;
+    }
+    nav button{
+        margin-right: 20px ;
+        height: 4vh;
+        width: 7vw;
+        background-color: blue;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+        height: 70vh;
+        align-items: center;
+        gap: 10vw;
+    }
+    aside{
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        margin-left: 8vw;
+        margin-top: 25%;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    aside h1{
+        color: aqua;
+        font-size: 3rem;
+    }
+    .cobrand{
+        color: aqua;
+    }
+    .row1{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .row1 div{
+        border: 1px solid black;
+        height: 5vh;
+        width: 10vw;
+        margin: 5px;
+    
+    }
+    .row2{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    .row2 div{
+        border: 1px solid black;
+        height: 5vh;
+        width: 10vw;
+        margin: 5px;
+    
+    }
+    .asidefooter{
+        font-size: 0.90rem;
+         margin-top: 20vh;
+    }
+    .img{
+        margin-top: 20vh;
+    }
+    .footer{
+        text-align: center;
+        color: black;
+        margin-top: 800px;
+        height: 30vh;
+        width: 100vw;
+    }
+    .footer h1{
+        color: blueviolet;
+        margin: 10px;
+        font-size: 3rem;
+    }
+
+    }
+    
+
+@media (min-width: 700px) {
+    
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    color: aliceblue;
+    background-color: black;
+}
+.logo{
+    margin-left: 20px;
+}
+.navigate{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20vw;
+}
+nav button{
+    margin-right: 20px ;
+    height: 4vh;
+    width: 7vw;
+    background-color: blue;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    height: 70vh;
+    align-items: center;
+    gap: 10vw;
+}
+aside{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 8vw;
+    margin-top: 25%;
+    font-size: 30px;
+    font-weight: 600;
+}
+aside h1{
+    color: aqua;
+    font-size: 3rem;
+}
+.cobrand{
+    color: aqua;
+}
+.row1{
+    display: flex;
+    flex-direction: row;
+    
+}
+.row1 div{
+    border: 1px solid black;
+    height: 5vh;
+    width: 10vw;
+    margin: 5px;
+
+}
+.row2{
+    display: flex;
+    flex-direction: row;
+    
+}
+.row2 div{
+    border: 1px solid black;
+    height: 5vh;
+    width: 10vw;
+    margin: 5px;
+
+}
+.asidefooter{
+    font-size: 0.90rem;
+     margin-top: 20vh;
+}
+.img{
+    margin-top: 20vh;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    margin-top: 50px;
+    width: 100vw;
+    font-size: 20px;
+    line-break: auto;
+}
+.footer h1{
+    color: blueviolet;
+    margin-top: 2vh;
+    font-size: 3rem;
+}
+}
