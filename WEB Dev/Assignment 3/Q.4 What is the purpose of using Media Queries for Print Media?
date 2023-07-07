@@ -1,0 +1,17 @@
+Q.4 What is the purpose of using Media Queries for Print Media?
+Solution:
+The purpose of using media queries specifically for print media is to create a separate set of styles that are applied when a webpage is being printed. By utilizing media queries for print, you can customize the appearance and layout of the printed version to ensure it is optimized for the printed medium.
+
+Here are some specific purposes of using media queries for print media:
+
+1. Adjusting layout and formatting: When content is printed, it often requires different formatting and layout compared to its appearance on a screen. Media queries for print allow you to modify elements such as margins, page breaks, font sizes, and background colors to ensure the printed output is well-structured and readable.
+
+2. Hiding or showing specific elements: Some elements that are important for on-screen viewing, such as navigation menus, advertisements, or interactive components, may not be necessary or desirable in a printed version. With media queries, you can selectively hide or show specific elements to optimize the content for printing purposes.
+
+3. Controlling page breaks and pagination: Print media queries enable you to influence how content is divided across pages when printed. You can specify where page breaks should occur, prevent unwanted breaks within specific elements, and control the pagination to ensure a more coherent and intuitive reading experience on paper.
+
+4. Adjusting font styles and sizes: Text readability is crucial when printing content. With media queries for print, you can adjust font styles, sizes, line heights, and other typographic properties to enhance legibility and ensure the printed text is optimized for the medium.
+
+5. Applying print-specific instructions: Media queries for print also allow you to include print-specific instructions using the `@page` rule. These instructions can control aspects such as page size, page orientation (portrait or landscape), headers, footers, and other print-specific settings.
+
+By utilizing media queries for print media, you can create a well-formatted and readable print version of your web content, tailoring it to the specific requirements and limitations of the printed medium. This ensures that users who choose to print your webpages have a satisfactory experience and can easily consume the information in a printed format.
