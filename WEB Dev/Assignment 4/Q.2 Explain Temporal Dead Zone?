@@ -1,0 +1,30 @@
+Q.2 Explain Temporal Dead Zone?
+Solution:
+The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs when variables declared with `let` and `const` keywords are inaccessible and throw a reference error if accessed before they are initialized. This concept is closely related to hoisting.
+
+When using `let` and `const` to declare variables, they are hoisted to the top of their respective scopes, just like with `var` declarations. However, unlike `var`, which is initialized with a value of `undefined`, variables declared with `let` and `const` remain uninitialized in the TDZ until they reach their actual declaration.
+
+Let's look at an example to understand the Temporal Dead Zone:
+
+```javascript
+console.log(x); // ReferenceError: x is not defined
+let x = 5;
+```
+
+In this example, even though `x` is accessed before its declaration, it throws a `ReferenceError` instead of returning `undefined` as with hoisted `var` variables. This is because the variable is still in the TDZ until the actual declaration `let x = 5;` is reached.
+
+The TDZ ends and the variable becomes accessible as soon as the declaration statement is encountered during the code execution. For example:
+
+```javascript
+let y;
+console.log(y); // undefined
+
+y = 10;
+console.log(y); // 10
+```
+
+In this case, the variable `y` is declared before the first `console.log` statement, but it is not yet initialized. Therefore, accessing `y` at that point returns `undefined`. However, after the assignment `y = 10;`, the variable is initialized and accessible, and the second `console.log` statement prints `10`.
+
+The Temporal Dead Zone serves as a mechanism to catch and prevent the use of variables before they are initialized, helping to identify potential bugs and maintain code clarity. It encourages developers to declare variables at the top of their respective scopes and avoid relying on hoisting behavior to access them before declaration.
+
+It's worth noting that the TDZ applies only to `let` and `const` declarations, as they are block-scoped, whereas `var` declarations are function-scoped and do not have a TDZ.
