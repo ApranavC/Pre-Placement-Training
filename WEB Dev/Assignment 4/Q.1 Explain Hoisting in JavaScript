@@ -1,0 +1,38 @@
+Q.1 Explain Hoisting in JavaScript
+Solution:
+In JavaScript, hoisting is a behavior that allows variables and function declarations to be moved to the top of their respective scopes during the compilation phase before the code is executed. This means that regardless of where declarations are placed in the code, they are treated as if they are at the top.
+
+Hoisting is a concept specific to JavaScript and can sometimes lead to unexpected results if not understood correctly. It is important to note that hoisting only moves the declarations themselves and not the initializations or assignments. Let's look at two types of hoisting: variable hoisting and function hoisting.
+
+1. Variable Hoisting:
+When a variable is declared using the `var` keyword, the declaration is hoisted to the top of its scope. However, the assignment or initialization of the variable remains in the original place. This means that variables can be accessed before they are declared in the code.
+
+Here's an example to illustrate variable hoisting:
+
+```javascript
+console.log(x); // undefined
+var x = 5;
+```
+
+In the example above, even though `x` is accessed before it is declared and assigned a value, it doesn't throw an error. This is because the declaration of `x` is hoisted to the top, resulting in the variable being defined but not yet assigned a value. So, when `console.log(x)` is executed, it prints `undefined`.
+
+2. Function Hoisting:
+In JavaScript, function declarations are also hoisted to the top of their scope. This means that you can call a function before it appears in the code.
+
+Consider the following example:
+
+```javascript
+foo(); // "Hello, world!"
+
+function foo() {
+  console.log("Hello, world!");
+}
+```
+
+In this example, the function `foo` is called before it is defined in the code. However, due to hoisting, the function declaration is moved to the top, allowing it to be invoked successfully.
+
+It's important to note that function expressions, such as those defined using the `const` or `let` keywords, do not exhibit hoisting behavior. Only function declarations using the `function` keyword are hoisted.
+
+To avoid confusion and potential bugs caused by hoisting, it's considered good practice to declare variables at the top of their respective scopes and define functions before they are called.
+
+In summary, hoisting is a behavior in JavaScript that moves variable and function declarations to the top of their respective scopes during the compilation phase, allowing them to be accessed before they are actually defined in the code. However, hoisting only moves the declarations themselves, not the initializations or assignments.
