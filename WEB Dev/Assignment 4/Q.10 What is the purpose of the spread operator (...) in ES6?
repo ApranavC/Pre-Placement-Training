@@ -1,0 +1,66 @@
+Q.10 What is the purpose of the spread operator (...) in ES6?
+Solution:
+The spread operator (`...`) in ECMAScript 6 (ES6) is a versatile feature that provides several useful functionalities. Its primary purpose is to expand or spread iterable objects, such as arrays or strings, into individual elements. Here are some common use cases and purposes of the spread operator:
+
+1. Array and Object Expansion:
+   - The spread operator allows you to expand arrays and objects into other arrays or objects, combining their elements or properties.
+
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const combinedArray = [...arr1, ...arr2];
+console.log(combinedArray); // [1, 2, 3, 4, 5, 6]
+
+const obj1 = { x: 1, y: 2 };
+const obj2 = { z: 3 };
+
+const combinedObject = { ...obj1, ...obj2 };
+console.log(combinedObject); // { x: 1, y: 2, z: 3 }
+```
+
+In these examples, the spread operator `...` is used to expand the arrays `arr1` and `arr2`, as well as the objects `obj1` and `obj2`. The expanded elements or properties are combined into a new array or object.
+
+2. Function Arguments:
+   - The spread operator can be used to pass an array of values as individual arguments to a function.
+
+```javascript
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+const result = sum(...numbers);
+console.log(result); // 6
+```
+
+In this example, the `numbers` array is spread using the `...` operator when passing it to the `sum` function. The elements of the array are expanded and passed as separate arguments to the function.
+
+3. Copying Arrays and Objects:
+   - The spread operator can be used to create shallow copies of arrays or objects.
+
+```javascript
+const originalArray = [1, 2, 3];
+const copyArray = [...originalArray];
+
+const originalObject = { x: 1, y: 2 };
+const copyObject = { ...originalObject };
+```
+
+Here, the spread operator is used to create new arrays and objects (`copyArray` and `copyObject`) that contain the same elements or properties as the original arrays and objects. Modifying the copied arrays or objects does not affect the original ones.
+
+4. Concatenating Arrays:
+   - The spread operator can be used to concatenate multiple arrays into a new array.
+
+```javascript
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const arr3 = [5, 6];
+
+const concatenatedArray = [...arr1, ...arr2, ...arr3];
+console.log(concatenatedArray); // [1, 2, 3, 4, 5, 6]
+```
+
+In this example, the spread operator is used to combine the elements of multiple arrays into a single new array.
+
+The spread operator is a powerful tool in ES6 that simplifies various operations involving arrays, objects, and function arguments. It enhances code readability, reduces the need for explicit loops or concatenation methods, and offers a more concise syntax for common programming tasks.
