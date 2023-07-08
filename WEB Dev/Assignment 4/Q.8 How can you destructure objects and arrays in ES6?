@@ -1,0 +1,64 @@
+Q.8 How can you destructure objects and arrays in ES6?
+Solution:
+In ECMAScript 6 (ES6), object and array destructuring provides a convenient way to extract values from objects and arrays and assign them to variables. It allows you to unpack and access specific elements easily. Here's how you can destructure objects and arrays in ES6:
+
+1. Destructuring Objects:
+   - To destructure an object, you can use the curly braces `{}` with variable assignments that match the property names of the object.
+
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+};
+
+const { firstName, lastName, age } = person;
+
+console.log(firstName); // 'John'
+console.log(lastName); // 'Doe'
+console.log(age); // 30
+```
+
+In this example, the properties `firstName`, `lastName`, and `age` are extracted from the `person` object and assigned to separate variables using object destructuring.
+
+2. Destructuring Arrays:
+   - Array destructuring uses square brackets `[]` to extract values from an array and assign them to variables. The order of variable assignments matches the order of elements in the array.
+
+```javascript
+const numbers = [1, 2, 3];
+
+const [a, b, c] = numbers;
+
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+```
+
+In this example, the values `1`, `2`, and `3` from the `numbers` array are assigned to the variables `a`, `b`, and `c` using array destructuring.
+
+3. Default Values and Renaming:
+   - Destructuring also allows you to set default values and rename variables during assignment.
+
+```javascript
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+};
+
+const { firstName, lastName, age = 30 } = person;
+console.log(firstName); // 'John'
+console.log(lastName); // 'Doe'
+console.log(age); // 30
+
+const numbers = [1, 2];
+const [a, b, c = 3] = numbers;
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // 3
+```
+
+In the first example, the `age` property is not present in the `person` object. By setting `age = 30`, a default value of `30` is assigned to the `age` variable if the property is undefined.
+
+In the second example, the `numbers` array has only two elements. By using `c = 3`, a default value of `3` is assigned to the `c` variable if the corresponding element in the array is undefined.
+
+Destructuring objects and arrays in ES6 can greatly simplify the process of extracting values and assigning them to variables. It provides a concise and readable way to access specific elements within complex data structures.
