@@ -1,0 +1,42 @@
+Q.7 What’s difference between map & forEach?
+The `map()` and `forEach()` methods in JavaScript are both used to iterate over arrays and perform operations on each element. However, there are a few key differences between them:
+
+1. Return Value:
+- `map()`: The `map()` method returns a new array containing the results of applying a provided callback function to each element of the original array. It creates a new array with the same length as the original, where each element is the result of the callback function.
+- `forEach()`: The `forEach()` method does not return anything. It simply iterates over the array and executes a provided callback function on each element.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+
+const mappedResult = numbers.map((num) => num * 2);
+console.log(mappedResult); // [2, 4, 6, 8]
+
+numbers.forEach((num) => console.log(num * 2));
+// Output: 2, 4, 6, 8 (printed individually, not as an array)
+```
+
+In the above example, `map()` returns a new array (`mappedResult`) with each element multiplied by 2, while `forEach()` executes the callback function but does not return anything directly.
+
+2. Mutability:
+- `map()`: The `map()` method does not modify the original array. It creates a new array with the modified elements.
+- `forEach()`: The `forEach()` method does not create a new array. It operates on the original array directly and can modify its elements.
+
+```javascript
+const numbers = [1, 2, 3, 4];
+
+const mappedResult = numbers.map((num) => num * 2);
+console.log(mappedResult); // [2, 4, 6, 8]
+
+numbers.forEach((num, index, arr) => {
+  arr[index] = num * 2;
+});
+console.log(numbers); // [2, 4, 6, 8]
+```
+
+In this example, `map()` creates a new array (`mappedResult`) without modifying the original `numbers` array. On the other hand, `forEach()` modifies the original array directly by updating each element.
+
+3. Usage and Purpose:
+- `map()`: The primary purpose of `map()` is to transform each element of an array and create a new array with the transformed values. It is useful when you want to perform a specific operation on each element and collect the results in a new array.
+- `forEach()`: The main purpose of `forEach()` is to iterate over each element of an array and execute a provided callback function on each element. It is commonly used when you want to perform an action or side effect for each element, such as logging or updating variables.
+
+Overall, the key difference between `map()` and `forEach()` lies in their return values, mutability of the original array, and their specific use cases. Choose `map()` when you need to create a new array with transformed values, and use `forEach()` when you want to iterate over the elements of an array and perform an action or side effect on each element.
