@@ -1,0 +1,42 @@
+Q.9 How can you define default parameter values in ES6 functions?
+Solution:
+In ECMAScript 6 (ES6), you can define default parameter values for function parameters. Default parameters allow you to specify default values that are used when arguments are not provided or are `undefined`. Here's how you can define default parameter values in ES6 functions:
+
+```javascript
+function greet(name = 'Guest') {
+  console.log(`Hello, ${name}!`);
+}
+
+greet(); // Hello, Guest!
+greet('Alice'); // Hello, Alice!
+```
+
+In the `greet` function above, the `name` parameter has a default value of `'Guest'`. If no argument is passed to the function or if the argument is `undefined`, the default value `'Guest'` is used.
+
+You can also use other expressions or function calls as default values:
+
+```javascript
+function multiply(a, b = 1) {
+  return a * b;
+}
+
+console.log(multiply(5)); // 5
+console.log(multiply(5, 2)); // 10
+```
+
+In the `multiply` function, the `b` parameter has a default value of `1`. If only one argument is provided, the default value `1` is used for `b`.
+
+It's worth noting that default parameter values are evaluated at the time the function is called. This means that if the default value is an expression or a function call, it is evaluated every time the function is invoked.
+
+```javascript
+function getTimestamp(date = new Date()) {
+  return date.getTime();
+}
+
+console.log(getTimestamp()); // Current timestamp
+setTimeout(() => console.log(getTimestamp()), 1000); // Timestamp after 1 second
+```
+
+In the `getTimestamp` function, the default value for `date` is `new Date()`, which returns the current date and time. Each time the function is called, a new `Date` object is created.
+
+Default parameter values provide a convenient way to handle missing or `undefined` arguments in function calls and simplify the logic of providing fallback values. They make code more concise and help avoid explicit checks for undefined or missing parameters.
