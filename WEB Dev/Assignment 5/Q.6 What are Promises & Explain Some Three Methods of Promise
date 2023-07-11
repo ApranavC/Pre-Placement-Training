@@ -1,0 +1,57 @@
+Q.6 What are Promises & Explain Some Three Methods of Promise
+Solution:
+Promises are a JavaScript object that represents the eventual completion (or failure) of an asynchronous operation. They are a more modern way to handle asynchronous code than callbacks.
+
+Promises have three states:
+
+* **Pending:** The promise is not yet resolved or rejected.
+* **Fulfilled:** The promise has been resolved with a value.
+* **Rejected:** The promise has been rejected with an error.
+
+Promises have a few methods that you can use to interact with them:
+
+* **resolve():** This method is called to resolve the promise with a value.
+* **reject():** This method is called to reject the promise with an error.
+* **then():** This method is used to chain promises together. It takes two functions as arguments: a `resolve` function and a `reject` function. The `resolve` function will be called when the promise is resolved, and the `reject` function will be called when the promise is rejected.
+
+For example, the following code creates a promise that resolves with the value "Hello, world!"
+
+```
+const promise = new Promise((resolve, reject) => {
+  resolve("Hello, world!");
+});
+```
+
+The `resolve()` method is called, which resolves the promise with the value "Hello, world!".
+
+The following code chains two promises together. The first promise makes an asynchronous HTTP request, and the second promise prints the response.
+
+```
+const promise1 = new Promise((resolve, reject) => {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://www.example.com');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      resolve(xhr.responseText);
+    } else {
+      reject(new Error('Request failed'));
+    }
+  };
+  xhr.send();
+});
+
+promise1.then(response => {
+  console.log(response);
+});
+```
+
+The `then()` method is called on the first promise. The `resolve` function of the first promise returns the response from the HTTP request. The `then()` method then calls the `console.log()` function with the response as an argument.
+
+I hope this explanation was helpful. Let me know if you have any other questions.
+
+Here are some other methods of Promise:
+
+* **catch():** This method is used to handle errors that are rejected by the promise.
+* **finally():** This method is used to run code regardless of whether the promise is resolved or rejected.
+* **all():** This method is used to wait for multiple promises to resolve before continuing.
+* **race():** This method is used to run the first promise that resolves.
