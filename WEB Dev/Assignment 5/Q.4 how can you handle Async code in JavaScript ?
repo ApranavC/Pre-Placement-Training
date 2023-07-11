@@ -1,0 +1,107 @@
+Q.4 how can you handle Async code in JavaScript ?
+Solution:
+There are two main ways to handle asynchronous code in JavaScript: callbacks and promises.
+
+**Callbacks**
+
+Callbacks are functions that are passed as parameters to other functions. They are used to handle the results of asynchronous operations. The syntax for a callback is:
+
+```
+function myCallback(result) {
+  // Do something with the result.
+}
+```
+
+The `result` parameter is the value returned by the asynchronous operation.
+
+For example, the following code makes an asynchronous HTTP request and passes the result to a callback function:
+
+```
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://www.example.com');
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    // The request was successful.
+    var response = xhr.responseText;
+  } else {
+    // The request failed.
+  }
+};
+xhr.send();
+```
+
+**Promises**
+
+Promises are objects that represent the eventual completion (or failure) of an asynchronous operation. They are a more modern way to handle asynchronous code than callbacks.
+
+The syntax for a promise is:
+
+```
+const promise = new Promise((resolve, reject) => {
+  // Do something asynchronous.
+  resolve('The result');
+});
+```
+
+The `resolve()` function is called when the asynchronous operation is successful. The `reject()` function is called when the asynchronous operation fails.
+
+The `promise` object can be used to chain asynchronous operations together. For example, the following code makes two asynchronous HTTP requests and then prints the results:
+
+```
+const promise1 = new Promise((resolve, reject) => {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://www.example.com');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      resolve(xhr.responseText);
+    } else {
+      reject(new Error('Request failed'));
+    }
+  };
+  xhr.send();
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://www.example.com/2');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      resolve(xhr.responseText);
+    } else {
+      reject(new Error('Request failed'));
+    }
+  };
+  xhr.send();
+});
+
+Promise.all([promise1, promise2]).then(results => {
+  console.log(results);
+});
+```
+
+**Async/Await**
+
+Async/await is a newer feature of JavaScript that allows you to write asynchronous code in a more synchronous style. Async/await uses promises under the hood, but it provides a more concise and readable syntax.
+
+The syntax for async/await is:
+
+```
+async function myFunction() {
+  // Do something asynchronous.
+  const result = await somePromise;
+
+  // Do something with the result.
+  console.log(result);
+}
+```
+
+The `await` keyword is used to wait for the completion of a promise. The value returned by the promise is then assigned to the variable after the `await` keyword.
+
+For example, the following code makes an asynchronous HTTP request and then prints the result:
+
+```
+async function myFunction() {
+  const response = await fetch('https://www.example.com');
+  console.log(response.text());
+}
+```
