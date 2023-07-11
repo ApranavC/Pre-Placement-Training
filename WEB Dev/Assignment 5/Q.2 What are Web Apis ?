@@ -1,0 +1,21 @@
+Q.2 What are Web Apis ?
+Solution:
+A web API (Application Programming Interface) is a set of functions and procedures that allow applications to communicate with each other over the web. Web APIs are typically used to access data or functionality from a remote server.
+
+Web APIs are typically defined using the REST architectural style, which uses HTTP methods (such as GET, POST, PUT, and DELETE) to access resources. The resources are typically represented in JSON or XML format.
+
+There are many different types of web APIs, but some of the most common include:
+
+* **Public APIs:** These are APIs that are available to anyone who wants to use them. They are often used by developers to build new applications or to integrate with existing applications.
+* **Partner APIs:** These are APIs that are made available to a select group of partners. They are often used to provide access to data or functionality that is not available to the general public.
+* **Private APIs:** These are APIs that are only available to internal users of an organization. They are often used to provide access to data or functionality that is not intended for public consumption.
+
+Web APIs are a powerful tool that can be used to build a wide variety of applications. They are easy to use and can be accessed from any device that has an internet connection.
+
+Here are some examples of web APIs:
+
+* **Google Maps API:** This API allows developers to access Google Maps data and functionality in their applications.
+* **Facebook API:** This API allows developers to access Facebook data and functionality in their applications.
+* **Twitter API:** This API allows developers to access Twitter data and functionality in their applications.
+
+Web APIs are becoming increasingly popular as a way to build powerful and flexible applications. As more and more data and functionality is made available through web APIs, we can expect to see even more innovative applications being built in the future.
