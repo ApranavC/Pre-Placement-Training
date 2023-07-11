@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q5</title>
+  <style>
+    body{
+        background-color: mintcream;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .error-message {
+      color: red;
+    }
+
+    h1{
+        color: blue;
+    }
+    form{
+        width: 80vw; 
+        background-color: white;
+        border-radius: 20px; 
+        padding: 10px;
+    }
+
+    label{
+        font-size: 22px;
+        color: rebeccapurple;
+        margin: 10px;
+    }
+    input{
+        width: 100px;
+        padding: 12px;
+        border-radius: 15px;
+        margin: 10px;
+    }
+
+    button{
+        width: 100px;
+        padding: 10px ;
+        border: none;
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: rgb(45, 233, 64);
+        letter-spacing: 1px;
+    }
+    button:active{
+        transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+  <h1>Form Validation</h1>
+
+  <form id="myForm">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <span class="error-message" id="nameError"></span>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <span class="error-message" id="emailError"></span>
+    </div>
+    <div>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required>
+      <span class="error-message" id="phoneError"></span>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+      <span class="error-message" id="passwordError"></span>
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+      <span class="error-message" id="ageError"></span>
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <select id="gender" required>
+        <option value=""></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <span class="error-message" id="genderError"></span>
+    </div>
+    <div>
+      <label for="date">Date:</label>
+      <input type="date" id="date" required>
+      <span class="error-message" id="dateError"></span>
+    </div>
+    <div>
+      <label for="color">Color:</label>
+      <input type="color" id="color" required>
+      <span class="error-message" id="colorError"></span>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
