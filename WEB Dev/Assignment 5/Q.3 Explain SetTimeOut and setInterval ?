@@ -1,0 +1,53 @@
+Q.3 Explain SetTimeOut and setInterval ?
+Solution:
+Sure. setTimeout() and setInterval() are JavaScript functions that allow you to run code after a specified delay. The main difference between the two functions is that setTimeout() will only run the code once, while setInterval() will run the code repeatedly at a specified interval.
+
+The syntax for setTimeout() is:
+
+```
+setTimeout(function, milliseconds);
+```
+
+The first parameter is a function that will be executed after the specified delay. The second parameter is the number of milliseconds to wait before executing the function.
+
+For example, the following code will execute the function `myFunction()` after 5 seconds:
+
+```
+setTimeout(myFunction, 5000);
+```
+
+The syntax for setInterval() is:
+
+```
+setInterval(function, milliseconds);
+```
+
+The first parameter is a function that will be executed repeatedly at the specified interval. The second parameter is the number of milliseconds to wait between each execution of the function.
+
+For example, the following code will execute the function `myFunction()` repeatedly every 2 seconds:
+
+```
+setInterval(myFunction, 2000);
+```
+
+To cancel a setTimeout() or setInterval() timer, you can use the clearTimeout() or clearInterval() functions. The syntax for clearTimeout() is:
+
+```
+clearTimeout(timerId);
+```
+
+The first parameter is the ID of the timer that you want to cancel. The ID of the timer can be obtained by calling the setTimeout() or setInterval() function.
+
+For example, the following code will cancel the timer with the ID `myTimerId`:
+
+```
+clearTimeout(myTimerId);
+```
+
+The syntax for clearInterval() is the same as for clearTimeout().
+
+setTimeout() and setInterval() are useful for a variety of tasks, such as:
+
+* **Running a function after a delay:** This can be useful for tasks such as loading images or animations.
+* **Running a function repeatedly at a specified interval:** This can be useful for tasks such as polling a server for updates or animating a progress bar.
+* **Cancelling a timer:** This can be useful if you need to stop a timer that is no longer needed.
