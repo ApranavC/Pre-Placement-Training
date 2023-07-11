@@ -1,0 +1,41 @@
+Q.8 Explain Purpose of Try and Catch Block & Why do we need it?
+Solution:
+The try and catch block is a way to handle errors in JavaScript. It allows you to run a block of code that may throw an error, and then handle the error if it is thrown.
+
+The try block is used to enclose the code that may throw an error. The catch block is used to handle the error if it is thrown. The finally block is used to run code regardless of whether the error is thrown or not.
+
+The syntax for the try and catch block is:
+
+```
+try {
+  // Code that may throw an error.
+} catch (error) {
+  // Handle the error.
+} finally {
+  // Code that will always run.
+}
+```
+
+For example, the following code tries to divide a number by zero:
+
+```
+try {
+  var result = 10 / 0;
+} catch (error) {
+  console.log(error);
+} finally {
+  console.log('The finally block always runs.');
+}
+```
+
+The `try` block will try to divide the number 10 by zero. If the division is successful, the `catch` block will not be executed. However, if the division is not successful, an error will be thrown. The `catch` block will then be executed, and the error will be logged to the console. The `finally` block will always be executed, regardless of whether the error is thrown or not.
+
+The try and catch block is a powerful tool that can be used to handle errors in JavaScript. It allows you to write code that is more robust and reliable.
+
+Here are some of the benefits of using the try and catch block:
+
+* **It allows you to handle errors gracefully.**
+* **It can help you prevent your code from crashing.**
+* **It can make your code more readable and maintainable.**
+
+Overall, the try and catch block is a valuable tool that can be used to improve the quality of your JavaScript code.
