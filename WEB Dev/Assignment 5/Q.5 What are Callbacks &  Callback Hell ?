@@ -1,0 +1,59 @@
+Q.5 What are Callbacks &  Callback Hell ?
+Solution:
+Callbacks and callback hell are two concepts related to asynchronous programming in JavaScript.
+
+**Callbacks**
+
+A callback is a function that is passed as a parameter to another function. It is used to handle the results of an asynchronous operation.
+
+For example, the following code makes an asynchronous HTTP request and passes the result to a callback function:
+
+```
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://www.example.com');
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    // The request was successful.
+    var response = xhr.responseText;
+  } else {
+    // The request failed.
+  }
+};
+xhr.send();
+```
+
+In this example, the `xhr.onload` function is a callback. It is passed as a parameter to the `xhr.open()` function. When the HTTP request is complete, the `xhr.onload` function will be called.
+
+**Callback Hell**
+
+Callback hell is a problem that can occur when you use callbacks to chain together asynchronous operations. It can make your code difficult to read and maintain.
+
+For example, the following code makes two asynchronous HTTP requests and then prints the results:
+
+```
+var xhr1 = new XMLHttpRequest();
+xhr1.open('GET', 'https://www.example.com');
+xhr1.onload = function() {
+  var response1 = xhr1.responseText;
+
+  var xhr2 = new XMLHttpRequest();
+  xhr2.open('GET', 'https://www.example.com/2');
+  xhr2.onload = function() {
+    var response2 = xhr2.responseText;
+
+    console.log(response1 + response2);
+  };
+  xhr2.send();
+};
+xhr1.send();
+```
+
+In this example, the `xhr1.onload` function calls the `xhr2.onload` function. This creates a chain of callbacks. If the `xhr2.onload` function then calls another callback, the chain will continue to grow.
+
+As the chain of callbacks grows, the code becomes more difficult to read and maintain. It can also be difficult to debug the code if something goes wrong.
+
+**How to avoid callback hell**
+
+There are a few ways to avoid callback hell. One way is to use promises. Promises are a more modern way to handle asynchronous code. They are easier to read and maintain than callbacks, and they can help you avoid callback hell.
+
+Another way to avoid callback hell is to use async/await. Async/await is a newer feature of JavaScript that allows you to write asynchronous code in a more synchronous style. This can make your code easier to read and maintain, and it can help you avoid callback hell.
