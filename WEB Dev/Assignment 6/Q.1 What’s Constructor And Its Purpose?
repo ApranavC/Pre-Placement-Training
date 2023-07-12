@@ -1,0 +1,37 @@
+Q.1 What’s Constructor And Its Purpose?
+Solution:
+A constructor is a special type of method that is used to initialize an object. It is called when an object of a class is created. The constructor has the same name as the class and it has no return type.
+
+The purpose of a constructor is to initialize the object's data members. This can be done by assigning values to the data members, or by calling other methods to initialize them.
+
+There are two types of constructors:
+
+* **Default constructor:** This is a constructor that does not have any parameters. If you do not define any constructors in your class, the compiler will automatically create a default constructor for you.
+* **Parameterized constructor:** This is a constructor that has parameters. The parameters are used to initialize the object's data members.
+
+Here is an example of a constructor in Java:
+
+```java
+public class Person {
+
+    private String name;
+    private int age;
+
+    public Person() {
+        name = "John Doe";
+        age = 30;
+    }
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+}
+```
+
+The first constructor in this example is the default constructor. It does not have any parameters, so it initializes the object's data members to the default values (null for the name and 0 for the age).
+
+The second constructor in this example is a parameterized constructor. It has two parameters, one for the name and one for the age. These parameters are used to initialize the object's data members.
+
+When you create an object of the Person class, the constructor will be called. The default constructor will be called if you do not specify any parameters, or the parameterized constructor will be called if you specify the parameters.
