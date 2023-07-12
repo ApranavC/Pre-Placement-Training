@@ -1,0 +1,52 @@
+Q.3 What’s Call Apply Bind Method & Difference Between them
+Solution:
+The `call()`, `apply()`, and `bind()` methods are JavaScript methods that allow you to change the `this` context of a function. The `this` context is the object that the function will refer to when it is called.
+
+The `call()` method takes two arguments: the first argument is the `this` value, and the second argument is an array of arguments to be passed to the function. The `apply()` method takes two arguments: the first argument is the `this` value, and the second argument is an iterable object that can be iterated over to get the arguments to be passed to the function. The `bind()` method takes three arguments: the first argument is the `this` value, the second argument is an array of arguments to be passed to the function, and the third argument is a function that will be called when the bound function is called.
+
+The main difference between the `call()`, `apply()`, and `bind()` methods is that the `call()` and `apply()` methods execute the function immediately, while the `bind()` method returns a new function that can be executed later.
+
+Here is a table summarizing the differences between the `call()`, `apply()`, and `bind()` methods:
+
+| Method | Arguments | Description |
+|---|---|---|
+| `call()` | `this` value, array of arguments | Executes the function with the specified `this` value and arguments. |
+| `apply()` | `this` value, iterable object of arguments | Executes the function with the specified `this` value and arguments. |
+| `bind()` | `this` value, array of arguments, function to be called | Returns a new function that can be executed later with the specified `this` value and arguments. |
+
+Here is an example of how to use the `call()` method:
+
+```javascript
+function greet(name) {
+  console.log("Hello, " + name);
+}
+
+greet.call({name: "John Doe"}); // "Hello, John Doe"
+```
+
+In this example, the `call()` method is used to call the `greet()` function with the `this` value of the object `{name: "John Doe"}` and the argument `"John Doe"`.
+
+Here is an example of how to use the `apply()` method:
+
+```javascript
+function greet(name) {
+  console.log("Hello, " + name);
+}
+
+greet.apply({name: "John Doe"}, ["Jane Doe"]); // "Hello, John Doe"
+```
+
+In this example, the `apply()` method is used to call the `greet()` function with the `this` value of the object `{name: "John Doe"}` and the arguments `"John Doe"` and `"Jane Doe"`.
+
+Here is an example of how to use the `bind()` method:
+
+```javascript
+function greet(name) {
+  console.log("Hello, " + name);
+}
+
+const boundGreet = greet.bind({name: "John Doe"});
+boundGreet("Jane Doe"); // "Hello, Jane Doe"
+```
+
+In this example, the `bind()` method is used to create a new function that has the `this` value of the object `{name: "John Doe"}`. The new function is then called with the argument `"Jane Doe"`.
