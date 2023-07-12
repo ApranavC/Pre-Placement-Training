@@ -1,0 +1,19 @@
+Q.4 Explain OOPS ? 
+Solution:
+Object-oriented programming (OOP) is a programming paradigm that treats data as an object. Objects have both data and methods, which are used to manipulate the data. OOP is a way of thinking about software that makes it easier to write, understand, and maintain.
+
+There are four main concepts in OOP:
+
+* **Abstraction:** Abstraction is the process of hiding the details of an object from the user. This allows the user to only interact with the object's public methods, which makes the object easier to use.
+* **Encapsulation:** Encapsulation is the bundling of data and methods into a single unit. This makes it easier to maintain the object, as changes to the data or methods only need to be made in one place.
+* **Inheritance:** Inheritance is the ability of one object to inherit the properties and methods of another object. This allows objects to be reused, as they can share the same code.
+* **Polymorphism:** Polymorphism is the ability of an object to take on different forms. This allows objects to be used in different ways, depending on their context.
+
+OOP is a powerful programming paradigm that can be used to create complex and flexible software. It is a widely used paradigm, and most modern programming languages support it.
+
+Here are some of the benefits of using OOP:
+
+* **Abstraction:** Abstraction allows you to focus on the important aspects of an object, without having to worry about the details. This makes your code more concise and easier to understand.
+* **Encapsulation:** Encapsulation helps to keep your code organized and easy to maintain. It also helps to protect your data from unauthorized access.
+* **Inheritance:** Inheritance allows you to reuse code, which can save you time and effort. It also makes your code more modular and easier to understand.
+* **Polymorphism:** Polymorphism allows you to use objects in different ways, depending on their context. This can make your code more flexible and easier to use.
