@@ -1,0 +1,23 @@
+Q.5 Whats Abstraction and Its Purpose?
+Solution:
+Abstraction is a fundamental concept in object-oriented programming (OOP). It is the process of hiding the details of an object from the user. This allows the user to only interact with the object's public methods, which makes the object easier to use.
+
+For example, a car is an object. It has many details, such as the engine, the transmission, the brakes, and so on. However, when you use a car, you do not need to know about all of these details. You only need to know how to start the car, how to drive it, and how to stop it.
+
+The details of the car's engine, transmission, and brakes are hidden from you. This is abstraction. It allows you to focus on the important aspects of the car, without having to worry about the details.
+
+The purpose of abstraction is to make code more concise and easier to understand. It also makes code more reusable, as the same code can be used to represent different objects.
+
+Here are some of the benefits of using abstraction:
+
+* **Conciseness:** Abstraction makes code more concise, as you do not need to write code for all of the details of an object.
+* **Understandability:** Abstraction makes code easier to understand, as you only need to focus on the important aspects of an object.
+* **Reusability:** Abstraction makes code more reusable, as the same code can be used to represent different objects.
+
+Abstraction is a powerful tool that can be used to improve the quality of your code. If you are new to OOP, it is a good idea to learn about abstraction early on.
+
+Here are some examples of abstraction in programming:
+
+* **Classes:** Classes are a way of creating abstract objects. A class defines the public methods and properties of an object, but it does not define the implementation of these methods and properties.
+* **Interfaces:** Interfaces are a way of defining the behavior of an object. An interface defines the public methods that an object must implement, but it does not define the implementation of these methods.
+* **Abstract classes:** Abstract classes are a way of creating abstract objects that cannot be instantiated. An abstract class can only be used as a base class for other classes.
