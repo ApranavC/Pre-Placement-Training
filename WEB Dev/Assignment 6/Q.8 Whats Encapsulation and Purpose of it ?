@@ -1,0 +1,20 @@
+Q.8 Whats Encapsulation and Purpose of it ?
+Solution:
+Encapsulation is a fundamental concept in object-oriented programming (OOP). It is the bundling of data and methods into a single unit, known as a class. This makes it easier to maintain the object, as changes to the data or methods only need to be made in one place.
+
+The purpose of encapsulation is to **hide the implementation details of an object** from the user. This allows the user to only interact with the object's public methods, which makes the object easier to use.
+
+Here are some of the benefits of using encapsulation:
+
+* **Data hiding:** Encapsulation hides the implementation details of an object from the user. This makes the object easier to use, as the user does not need to know how the object works.
+* **Data protection:** Encapsulation can help to protect data from unauthorized access. This is because the data is hidden from the user, and only the object's methods can access it.
+* **Code reuse:** Encapsulation can help to promote code reuse. This is because the object's public methods can be used by other objects, without the need to know how the object works.
+* **Maintenance:** Encapsulation can make code easier to maintain. This is because changes to the object's data or methods only need to be made in one place.
+
+Encapsulation is a powerful tool that can be used to improve the quality of your code. If you are new to OOP, it is a good idea to learn about encapsulation early on.
+
+Here are some examples of encapsulation in programming:
+
+* **Class:** A class is a way of encapsulating data and methods. A class defines the public methods and properties of an object, but it does not define the implementation of these methods and properties.
+* **Getters and setters:** Getters and setters are methods that are used to access the private data of an object. Getters are used to get the value of the data, and setters are used to set the value of the data.
+* **Access modifiers:** Access modifiers are used to control the visibility of the data and methods of a class. The three most common access modifiers are `public`, `private`, and `protected`.
