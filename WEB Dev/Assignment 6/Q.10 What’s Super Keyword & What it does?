@@ -1,0 +1,31 @@
+Q.10 What’s Super Keyword & What it does?
+Solution:
+The `super` keyword in JavaScript is used to access the methods and properties of the parent class. It is used in classes that inherit from other classes.
+
+The `super` keyword can be used to call the methods of the parent class. For example, if a class `Child` inherits from a class `Parent`, the `Child` class can call the `greet()` method of the `Parent` class using the following code:
+
+```
+class Child extends Parent {
+  greet() {
+    super.greet();
+  }
+}
+```
+
+The `super` keyword can also be used to access the properties of the parent class. For example, if a class `Child` inherits from a class `Parent`, the `Child` class can access the `name` property of the `Parent` class using the following code:
+
+```
+class Child extends Parent {
+  greet() {
+    console.log(super.name);
+  }
+}
+```
+
+The `super` keyword is a powerful tool that can be used to access the methods and properties of the parent class. It is a valuable tool for working with inheritance in JavaScript.
+
+Here are some of the benefits of using the `super` keyword:
+
+* **Code reuse:** The `super` keyword can be used to reuse the code of the parent class. This can save time and effort in development.
+* **Maintainability:** The `super` keyword can make code easier to maintain. This is because the code for the parent class is all in one place, so it is easy to find and modify.
+* **Extensibility:** The `super` keyword can be used to extend the functionality of the parent class. This can be done by adding new methods or properties to the child class.
