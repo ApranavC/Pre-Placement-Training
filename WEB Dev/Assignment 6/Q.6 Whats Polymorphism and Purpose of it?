@@ -1,0 +1,26 @@
+Q.6 Whats Polymorphism and Purpose of it?
+Solution:
+Polymorphism is a feature of object-oriented programming (OOP) that allows objects of different types to respond to the same message in different ways. This means that you can write code that works with objects of different types without having to worry about the specific type of object that is being used.
+
+For example, you could write a method that takes an object as a parameter and prints out the object's name. This method would work with objects of any type, as long as the object has a `name` property.
+
+There are two main types of polymorphism: **compile-time polymorphism** and **runtime polymorphism**.
+
+* **Compile-time polymorphism** is also known as **static polymorphism**. It occurs when the compiler can determine the type of object that will be used at compile time. This is usually done by using type casts or by using generics.
+* **Runtime polymorphism** is also known as **dynamic polymorphism**. It occurs when the compiler cannot determine the type of object that will be used at compile time. This is usually done by using virtual methods.
+
+The purpose of polymorphism is to make code more flexible and reusable. It allows you to write code that works with objects of different types without having to worry about the specific type of object that is being used. This can make your code more concise and easier to understand.
+
+Here are some of the benefits of using polymorphism:
+
+* **Flexibility:** Polymorphism makes code more flexible, as it allows you to use objects of different types in the same way.
+* **Reusability:** Polymorphism makes code more reusable, as you can write code that works with objects of different types without having to rewrite the code for each type of object.
+* **Conciseness:** Polymorphism can make code more concise, as you do not need to write code that specifically deals with the type of object that is being used.
+
+Polymorphism is a powerful tool that can be used to improve the quality of your code. If you are new to OOP, it is a good idea to learn about polymorphism early on.
+
+Here are some examples of polymorphism in programming:
+
+* **Virtual methods:** Virtual methods are methods that can be overridden by subclasses. This allows subclasses to provide different implementations of the same method.
+* **Overloading:** Overloading is the ability to have multiple methods with the same name, but with different parameters. This allows you to write methods that work with different types of data.
+* **Type casts:** Type casts are used to explicitly cast an object to a different type. This can be used to take advantage of polymorphism.
