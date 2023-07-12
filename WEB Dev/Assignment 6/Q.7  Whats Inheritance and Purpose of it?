@@ -1,0 +1,22 @@
+Q.7  Whats Inheritance and Purpose of it?
+Solution:
+Inheritance is a powerful concept in object-oriented programming (OOP) that allows one class to inherit the properties and methods of another class. This means that the derived class can reuse the code of the base class, which can save time and effort in development.
+
+The purpose of inheritance is to **promote code reuse** and **establish relationships between classes**. By inheriting from a base class, the derived class can inherit the base class's properties and methods. This can save time and effort in development, as the derived class does not need to reimplement the code that is already implemented in the base class.
+
+Inheritance can also be used to **establish relationships between classes**. For example, a class for `Car` could inherit from a class for `Vehicle`. This would establish a relationship between the two classes, such that a `Car` is a type of `Vehicle`.
+
+Here are some of the benefits of using inheritance:
+
+* **Code reuse:** Inheritance can help to promote code reuse by allowing derived classes to inherit the code of the base class. This can save time and effort in development.
+* **Reusability:** Inheritance can help to make code more reusable by allowing derived classes to inherit the code of the base class. This can make code more concise and easier to understand.
+* **Flexibility:** Inheritance can help to make code more flexible by allowing derived classes to override the methods of the base class. This can allow derived classes to provide different implementations of the same method.
+* **Maintainability:** Inheritance can help to make code more maintainable by allowing changes to the base class to be inherited by the derived classes. This can make it easier to update code as new requirements are added.
+
+Inheritance is a powerful tool that can be used to improve the quality of your code. If you are new to OOP, it is a good idea to learn about inheritance early on.
+
+Here are some examples of inheritance in programming:
+
+* **Animal:** This is a base class that defines the properties and methods that are common to all animals.
+* **Dog:** This is a derived class that inherits from the `Animal` class. The `Dog` class adds additional properties and methods that are specific to dogs.
+* **Cat:** This is a derived class that inherits from the `Animal` class. The `Cat` class adds additional properties and methods that are specific to cats.
