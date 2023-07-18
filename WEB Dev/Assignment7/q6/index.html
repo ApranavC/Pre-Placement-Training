@@ -1,0 +1,47 @@
+<!-- Product List Page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product List Page</title>
+  </head>
+  <body>
+    <div class="product" data-id="1">
+      <h2>Product 1</h2>
+      <p>Description for Product 1</p>
+      <p>$10</p>
+    </div>
+    <div class="product" data-id="2">
+      <h2>Product 2</h2>
+      <p>Description for Product 2</p>
+      <p>$20</p>
+    </div>
+    <!-- Other products... -->
+  </body>
+  <script>
+    // Get all product elements
+    const products = document.querySelectorAll('.product');
+
+    // Add click event listener to each product
+    products.forEach((product) => {
+      product.addEventListener('click', () => {
+        // Get the product data
+        const productId = product.getAttribute('data-id');
+        const productName = product.querySelector('h2').textContent;
+        const productDescription = product.querySelector('p:nth-of-type(1)').textContent;
+        const productPrice = product.querySelector('p:nth-of-type(2)').textContent;
+
+        // Store the product data in localStorage
+        const productData = {
+          id: productId,
+          name: productName,
+          description: productDescription,
+          price: productPrice
+        };
+        localStorage.setItem('selectedProduct', JSON.stringify(productData));
+
+        // Redirect to the single product page
+        window.location.href = 'single-product.html';
+      });
+    });
+  </script>
+</html>

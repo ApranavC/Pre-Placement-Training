@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Web Application</title>
+  <style>
+    body{
+      text-align: center;
+      background-color: cornflowerblue;
+      text-decoration: none;
+
+    }
+    .h1{
+      
+    }
+    .quizContainer{
+      border: 2px solid black;
+      width: fit-content;
+      margin-left: 600px;
+      background-color: rgb(8, 8, 99,.3);
+      color: white;
+    }
+    .question{
+      background-color: red;
+    }
+    .btn{
+      background-color: greenyellow;
+    }
+    .leaderboardContainer{
+      border: 2px solid black;
+      width: fit-content;
+      margin-left: 600px;
+      background-color: rgb(8, 8, 99,.3);
+      color: white;
+      padding: 40px;
+    }
+
+  </style>
+</head>
+<body>
+    <h1 class="h1">Quiz Web Application</h1>
+  
+  <div  class= "quizContainer"    id="quizContainer">
+    <div class="question" id="question"></div>
+    <ul id="choices"></ul>
+    <div id="feedback"></div>
+    <button class="btn" id="submitBtn">Submit Answer</button>
+  </div>
+  
+  <div class="leaderboardContainer" id="leaderboardContainer">
+    <h2>Leaderboard</h2>
+    <ul id="leaderboard"></ul>
+    <div id="overallResult"></div>
+  </div>
+
+  <script>
+    // Quiz Data
+    var quizQuestions = [
+      {
+        question: "Question 1: What is the capital of France?",
+        choices: ["Paris", "London", "Berlin", "Madrid"],
+        correctAnswer: 0
+      },
+      {
+        question: "Question 2: Who painted the Mona Lisa?",
+        choices: ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo"],
+        correctAnswer: 0
+      },
+      // Add more questions here
+    ];
+
+    // Variables
+    var currentQuestion = 0;
+    var score = 0;
+
+    // DOM Elements
+    var questionEl = document.getElementById("question");
+    var choicesEl = document.getElementById("choices");
+    var feedbackEl = document.getElementById("feedback");
+    var submitBtn = document.getElementById("submitBtn");
+    var leaderboardEl = document.getElementById("leaderboard");
+    var overallResultEl = document.getElementById("overallResult");
+
+    // Display Question and Choices
+    function displayQuestion() {
+      var q = quizQuestions[currentQuestion];
+      questionEl.textContent = q.question;
+
+      choicesEl.innerHTML = "";
+      for (var i = 0; i < q.choices.length; i++) {
+        var choice = document.createElement("li");
+        choice.textContent = q.choices[i];
+        choice.dataset.choiceIndex = i;
+        choice.addEventListener("click", handleChoiceClick);
+        choicesEl.appendChild(choice);
+      }
+    }
+
+    // Handle Choice Selection
+    function handleChoiceClick(e) {
+      var selectedChoiceIndex = e.target.dataset.choiceIndex;
+      var correctChoiceIndex = quizQuestions[currentQuestion].correctAnswer;
+
+      if (selectedChoiceIndex == correctChoiceIndex) {
+        feedbackEl.textContent = "Correct!";
+        score++;
+      } else {
+        feedbackEl.textContent = "Wrong!";
+      }
+
+      currentQuestion++;
+      if (currentQuestion < quizQuestions.length) {
+        displayQuestion();
+      } else {
+        displayLeaderboard();
+      }
+    }
+
+    // Display Leaderboard
+    function displayLeaderboard() {
+      questionEl.style.display = "none";
+      choicesEl.style.display = "none";
+      feedbackEl.style.display = "none";
+      submitBtn.style.display = "none";
+      leaderboardEl.style.display = "block";
+      overallResultEl.style.display = "block";
+
+      leaderboardEl.innerHTML = "";
+      var listItem = document.createElement("li");
+      listItem.textContent = "Correct Answers: " + score;
+      leaderboardEl.appendChild(listItem);
+
+      var totalQuestions = quizQuestions.length;
+      var incorrectAnswers = totalQuestions - score;
+      listItem = document.createElement("li");
+      listItem.textContent = "Incorrect Answers: " + incorrectAnswers;
+      leaderboardEl.appendChild(listItem);
+
+      overallResultEl.textContent = "Your Score: " + score + "/" + totalQuestions;
+    }
+
+    // Event Listeners
+    submitBtn.addEventListener("click", handleChoiceClick);
+
+    // Initialize Quiz
+    displayQuestion();
+  </script>
+</body>
+</html>

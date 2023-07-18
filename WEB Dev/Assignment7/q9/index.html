@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="todo-item">
+        <p class="task-name">Todo Task 1</p>
+        <button class="update-status" data-id="1">Update Status</button>
+        <button class="delete-todo" data-id="1">Delete Todo</button>
+        <script>
+            const updateStatusButtons = document.querySelectorAll('.update-status');
+updateStatusButtons.forEach(button => {
+  button.addEventListener('click', updateStatus);
+});
+function updateStatus(event) {
+  const todoId = event.target.dataset.id;
+  const todoItem = document.querySelector(`.todo-item[data-id="${todoId}"]`);
+  
+  // Perform the necessary logic to update the status of the task
+  
+  // Change the background color of the task to indicate the updated status
+  todoItem.style.backgroundColor = 'green';
+}
+const deleteTodoButtons = document.querySelectorAll('.delete-todo');
+deleteTodoButtons.forEach(button => {
+  button.addEventListener('click', deleteTodo);
+});
+
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-color: rgb(114, 196, 32);
+         
+        }
+        .text{
+            margin-top: 50px;
+             text-align: center;
+            font-weight: 900;
+            color: darkslategray;
+         font-size: 120px;
+         height: max-content;
+            letter-spacing: 10px;
+            
+            
+        }
+        .clock {
+            
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.time {
+    background: rgb(141, 228, 141,.3 );
+    border-radius: 20px;
+ padding: 80px;
+  font-size: 80px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="text">Hayat Jahangir Khan</div>
+    <div class="clock">
+       
+        <div id="time" class="time"></div>
+        
+      </div> 
+      <script>
+        function updateClock() {
+  var currentTime = new Date();
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+
+  // Add leading zeros to minutes and seconds
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  // Format the time as HH:mm:ss
+  var timeString = hours + ":" + minutes + ":" + seconds;
+
+  // Update the time display
+  document.getElementById("time").innerHTML = timeString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+
+
+      </script>
+</body>
+</html>

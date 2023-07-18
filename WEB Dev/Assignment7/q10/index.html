@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+    </style>
+</head>
+<body>
+    <!-- Todo list container -->
+<ul id="todo-list"></ul>
+
+<!-- Edit Todo modal -->
+<div id="edit-modal" class="modal">
+  <div class="modal-content">
+    <h4>Edit Todo</h4>
+    <input type="text" id="edit-title" placeholder="Title">
+    <textarea id="edit-description" placeholder="Description"></textarea>
+    <button id="update-btn">Update</button>
+  </div>
+</div>
+<script>
+    // Get the todo list container
+const todoList = document.getElementById('todo-list');
+
+// Get the edit modal and its elements
+const editModal = document.getElementById('edit-modal');
+const editTitleInput = document.getElementById('edit-title');
+const editDescriptionTextarea = document.getElementById('edit-description');
+const updateButton = document.getElementById('update-btn');
+
+// Example todo data
+let todos = [
+  { id: 1, title: 'Task 1', description: 'Description 1' },
+  { id: 2, title: 'Task 2', description: 'Description 2' },
+  // Add more todos here
+];
+
+// Function to render the todo list
+function renderTodoList() {
+  todoList.innerHTML = '';
+
+  todos.forEach(todo => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <span>${todo.title} - ${todo.description}</span>
+      <button class="edit-btn" data-id="${todo.id}">Edit</button>
+    `;
+    todoList.appendChild(li);
+  });
+}
+
+// Function to open the edit modal with todo data
+function openEditModal(todo) {
+  editTitleInput.value = todo.title;
+  editDescriptionTextarea.value = todo.description;
+  editModal.style.display = 'block';
+}
+
+// Function to update the todo with new values
+function updateTodo(todoId, newTitle, newDescription) {
+  todos = todos.map(todo => {
+    if (todo.id === todoId) {
+      return { ...todo, title: newTitle, description: newDescription };
+    }
+    return todo;
+  });
+
+  renderTodoList();
+}
+
+// Add event listener to the todo list for the edit button
+todoList.addEventListener('click', event => {
+  if (event.target.classList.contains('edit-btn')) {
+    const todoId = parseInt(event.target.getAttribute('data-id'));
+    const todo = todos.find(todo => todo.id === todoId);
+    openEditModal(todo);
+  }
+});
+
+// Add event listener to the update button in the edit modal
+updateButton.addEventListener('click', () => {
+  const todoId = parseInt(updateButton.getAttribute('data-id'));
+  const newTitle = editTitleInput.value;
+  const newDescription = editDescriptionTextarea.value;
+  updateTodo(todoId, newTitle, newDescription);
+  editModal.style.display = 'none';
+});
+
+// Render the initial todo list
+renderTodoList();
+
+</script>
+</body>
+</html>

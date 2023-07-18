@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+.status {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #888;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Todo App</h1>
+        <input type="text" id="taskInput" placeholder="Enter a task">
+        <button onclick="addTask()">Submit</button>
+        <ul id="taskList"></ul>
+      </div>
+      <script>
+ var tasks = []; // Array to store the tasks
+
+function addTask() {
+  var taskInput = document.getElementById('taskInput');
+  var taskText = taskInput.value.trim();
+
+  if (taskText !== '') {
+    var task = {
+      text: taskText,
+      completed: false
+    };
+
+    tasks.push(task);
+    displayTasks();
+    taskInput.value = '';
+  }
+}
+
+function displayTasks() {
+  var taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
+
+  tasks.forEach(function(task, index) {
+    var listItem = document.createElement('li');
+    listItem.innerHTML = `
+      <span class="${task.completed ? 'completed' : ''}">${task.text}</span>
+      <div class="actions">
+        <button onclick="toggleCompletion(${index})">${task.completed ? 'Mark Incomplete' : 'Mark Complete'}</button>
+        <button onclick="editTask(${index})">Edit</button>
+        <button onclick="removeTask(${index})">Remove</button>
+      </div>
+    `;
+    taskList.appendChild(listItem);
+  });
+}
+
+function toggleCompletion(index) {
+  tasks[index].completed = !tasks[index].completed;
+  displayTasks();
+}
+
+function editTask(index) {
+  var newTaskText = prompt('Enter the new task text:');
+  if (newTaskText !== null && newTaskText.trim() !== '') {
+    tasks[index].text = newTaskText.trim();
+    displayTasks();
+  }
+}
+
+function removeTask(index) {
+  tasks.splice(index, 1);
+  displayTasks();
+}
+
+
+
+
+
+function displayTasks() {
+  var taskList = document.getElementById('taskList');
+  taskList.innerHTML = '';
+
+  tasks.forEach(function(task, index) {
+    var listItem = document.createElement('li');
+    var status = task.completed ? 'Completed' : 'Incomplete';
+    
+    listItem.innerHTML = `
+      <span class="${task.completed ? 'completed' : ''}">${task.text}</span>
+      <span class="status">${status}</span>
+      <div class="actions">
+        <button onclick="toggleCompletion(${index})">${task.completed ? 'Mark Incomplete' : 'Mark Complete'}</button>
+        <button onclick="editTask(${index})">Edit</button>
+        <button onclick="removeTask(${index})">Remove</button>
+      </div>
+    `;
+    taskList.appendChild(listItem);
+  });
+}
+
+
+      </script>
+</body>
+</html>

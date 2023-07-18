@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Finder</title>
+    <style>
+        body{
+            background-color: rgb(61, 61, 241);
+        }
+        .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#user-info {
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub User Finder</h1>
+        <div class="search-container">
+            <input type="text" id="username-input" placeholder="Enter GitHub username">
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="user-info"></div>
+    </div>
+    <script>
+        document.getElementById('search-btn').addEventListener('click', function() {
+    var username = document.getElementById('username-input').value;
+    if (username) {
+        fetch('https://api.github.com/users/' + username)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                if (data.message === 'Not Found') {
+                    displayError('User not found!');
+                } else {
+                    displayUserInfo(data);
+                }
+            })
+            .catch(function(error) {
+                displayError('An error occurred while fetching user data.');
+            });
+    }
+});
+
+function displayUserInfo(user) {
+    var userInfoContainer = document.getElementById('user-info');
+    userInfoContainer.innerHTML = `
+        <img src="${user.avatar_url}" alt="User Avatar" class="avatar">
+        <h2>${user.name}</h2>
+        <p>Username: ${user.login}</p>
+        <p>Followers: ${user.followers}</p>
+        <p>Following: ${user.following}</p>
+        <p>Public Repositories: ${user.public_repos}</p>
+    `;
+}
+
+function displayError(errorMessage) {
+    var userInfoContainer = document.getElementById('user-info');
+    userInfoContainer.innerHTML = `<p>${errorMessage}</p>`;
+}
+
+    </script>
+</body>
+</html>
